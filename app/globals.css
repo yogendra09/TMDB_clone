@@ -1,27 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  --tmdbLightGreen: 30,213,169;
+  --tmdbLightBlue: 1,180,228;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  height: 100vh;
+  width: 100%;
 }
+.movies-drop{
+   top: 6%;
+   position: absolute;
+   display:none;
+   flex-direction: column;
+   z-index: 9;
+}
+.drop:hover .movies-drop{
+  display: flex;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+.movies-drop:hover .movies-drop{
+  display: flex;
+
+}
+.plus{
+  height: 25px;
+  width: 25px;
+  background-image: url('https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-371-plus-white-0bac34f16124808a12ea863b4d9cc6e599dee7c0a80658cfe9ead26939e64517.svg');
+}
+.ov{
+  background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.btn{
+  background: linear-gradient(to right,rgba(var(--tmdbLightGreen),1) 0%,rgba(var(--tmdbLightBlue),1) 100%);
+  color: #fff;
+  margin-left: -50px;
+}
+.img{
+ object-fit: cover;
+ height: 100%;
+ width: 100%;
+}
+.card-container::-webkit-scrollbar{
+  background:#fff;
+  height: 1.5vh;
+}
+.card-container::-webkit-scrollbar-thumb{
+  background-color: #dadada;
+  border-radius: 50px;
+ 
+}
+.bsg{
+  background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+ 
+  background-position-y: 200px;
+  background-repeat: no-repeat;
+
+}
+.emg{
+  width: 100%;
+}
+.cd{
+  transition: all ease .4s;
+}
+.cd:hover{
+  scale: 1.1;
 }
